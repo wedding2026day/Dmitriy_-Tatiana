@@ -149,12 +149,18 @@
   <img src="img/24.png" alt="" class="block10-img">
 
   <!-- форма -->
-  <form id="rsvp-form" class="rsvp-form">
+<form
+  id="rsvp-form"
+  class="rsvp-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+>
 
-    <!-- скрытые настройки -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_subject" value="Новая анкета со свадьбы">
+<input type="hidden" name="access_key" value="765529b4-2dd1-4210-a479-865e64bb3c55">
+<input type="hidden" name="subject" value="Новая анкета со свадьбы">
+<input type="hidden" name="from_name" value="Свадебный сайт">
+
+    
 
     <!-- ФИО -->
     <div class="form-group">
