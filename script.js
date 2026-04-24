@@ -19,18 +19,44 @@ const formMessage = document.getElementById("form-message");
 
 if (form) {
 
-  form.addEventListener("submit", function() {
+  form.addEventListener("submit", async function(e) {
 
-    formMessage.innerText = "Отправка анкеты...";
+    e.preventDefault();
 
-    setTimeout(() => {
-      formMessage.innerText = "Спасибо! Анкета отправлена";
-    }, 1500);
+    formMessage.innerText = "Отправка...";
+
+    const formData = new FormData(form);
+
+    try {
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+
+        formMessage.innerText = "Спасибо! Анкета отправлена 🤍";
+
+        form.reset();
+
+      } else {
+
+        formMessage.innerText = "Ошибка отправки";
+
+      }
+
+    } catch (error) {
+
+      formMessage.innerText = "Ошибка отправки";
+
+    }
 
   });
 
 }
-
 // КОНВЕРТ
 
 const envelopeScreen = document.getElementById("envelopeScreen");
