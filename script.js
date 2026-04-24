@@ -12,72 +12,46 @@ flyPhotos.forEach(photo => {
 
 });
 
-// ОТПРАВКА ФОРМЫ
+// ОТПРАВКА ФОРМЫ В GOOGLE ТАБЛИЦУ
 
 const form = document.getElementById("rsvp-form");
 const formMessage = document.getElementById("form-message");
 
-if (form) {
+const GOOGLE_SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1V76f-CNrr17P1bIIe8L0IUNaGHHOGBwj0hHZ6iWmzbk/edit?usp=sharing";
 
+if (form) {
   let isSending = false;
 
-  form.addEventListener("submit", async function(e){
-
+  form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
     if (isSending) return;
-
     isSending = true;
 
     const btn = form.querySelector(".submit-btn");
-
     btn.style.opacity = "0.6";
     btn.style.pointerEvents = "none";
 
-    const formData = new FormData(form);
+    const data = new FormData(form);
 
     try {
-
-      const response = await fetch(form.action, {
-        method:"POST",
-        body:formData,
-        headers:{
-          'Accept':'application/json'
-        }
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: data,
+        mode: "no-cors"
       });
 
-      if(response.ok){
+      form.reset();
+      formMessage.textContent = "Спасибо! Анкета отправлена";
 
-        form.reset();
-
-        if(formMessage){
-          formMessage.textContent = "Спасибо! Анкета отправлена 💌";
-        }
-
-      } else {
-
-        if(formMessage){
-          formMessage.textContent = "Ошибка отправки";
-        }
-
-      }
-
-    } catch(error){
-
-      if(formMessage){
-        formMessage.textContent = "Ошибка соединения";
-      }
-
+    } catch (error) {
+      formMessage.textContent = "Ошибка отправки. Попробуйте еще раз";
     } finally {
-
       isSending = false;
-
       btn.style.opacity = "1";
       btn.style.pointerEvents = "auto";
     }
-
   });
-
 }
 
 // КОНВЕРТ
