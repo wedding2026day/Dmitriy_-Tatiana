@@ -667,3 +667,46 @@ body{
   animation:none !important;
   transform:none !important;
 }
+
+/* ОПТИМИЗАЦИЯ ДЛЯ ТЕЛЕФОНА */
+
+*{
+  -webkit-tap-highlight-color: transparent;
+}
+
+body{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ускоряем анимации */
+
+.fade-in,
+.envelope-img,
+.hearts,
+.block3-btn img,
+.submit-btn img{
+
+  will-change:
+    transform,
+    opacity;
+
+  transform:
+    translateZ(0);
+
+  backface-visibility:hidden;
+}
+
+/* чтобы сайт сразу листался */
+
+html,
+body{
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* уменьшаем лаги safari */
+
+section,
+img{
+  contain:layout paint style;
+}
