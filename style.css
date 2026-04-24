@@ -1,0 +1,508 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('font/Montserrat-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+  background:#F7F8F8;
+}
+
+/* БЛОК 1 */
+
+.block1{
+  width:100%;
+}
+
+.block1-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 2 */
+
+.block2{
+  width:100%;
+}
+
+.block2-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 3 */
+
+.block3{
+  width:100%;
+}
+
+.block3-wrap{
+  position:relative;
+  width:100%;
+}
+
+.block3-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* кнопка поверх */
+.block3-btn{
+  position:absolute;
+
+  /* положение кнопки */
+  top:85%;
+  left:25%;
+
+  transform:translate(-50%, -50%);
+}
+
+/* фото кнопки */
+.block3-btn img{
+  width:70px; /* меняй размер */
+  max-width:60vw;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 4 */
+
+.block4{
+  width:100%;
+}
+
+.block4-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 5 */
+
+.block5{
+  width:100%;
+}
+
+.block5-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 6 */
+
+.block6{
+  width:100%;
+  overflow:hidden;
+}
+
+.block6-wrap{
+  position:relative;
+  width:100%;
+}
+
+/* большое фото */
+.block6-main{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* маленькие фото */
+.fly-photo{
+  position:absolute;
+  /* width:15%; */
+  /* height:auto; */
+
+  cursor:pointer;
+
+  transition:
+    transform 1.8s cubic-bezier(.22,.8,.2,1),
+    top 1.8s cubic-bezier(.22,.8,.2,1),
+    left 1.8s cubic-bezier(.22,.8,.2,1);
+
+  z-index:5;
+}
+
+/* стартовые позиции */
+
+/* фото 14 */
+.fly1{
+  width:11%;
+  top:14%;
+  left:17%;
+}
+
+/* фото 15 */
+.fly2{
+  width:17%;
+  top:17%;
+  left:41%;
+}
+
+/* фото 16 */
+.fly3{
+  width:20%;
+  top:18%;
+  right:14%;
+}
+
+/* КУДА УЛЕТАЮТ */
+
+/* фото 14 */
+.fly1.active{
+  top:80%;
+  left:33.5%;
+  /* transform:rotate(-18deg); */
+}
+
+/* фото 15 */
+.fly2.active{
+  top:77%;
+  left:30%;
+  /* transform:rotate(12deg); */
+}
+
+/* фото 16 */
+.fly3.active{
+  top:69%;
+  right:52%;
+  transform:rotate(-8deg);
+}
+
+/* БЛОК 7 */
+
+.block7{
+  width:100%;
+}
+
+.block7-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 8 */
+
+.block8{
+  width:100%;
+}
+
+.block8-wrap{
+  position:relative;
+  width:100%;
+}
+
+.block8-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* общие стили кнопок */
+.block8-btn{
+  position:absolute;
+  left:50%;
+
+  transform:translateX(-50%);
+}
+
+/* верхняя кнопка */
+.phone-btn{
+  top:68%;
+}
+
+/* нижняя кнопка */
+.vk-btn{
+  top:82%;
+}
+
+/* картинки кнопок */
+.block8-btn img{
+  width:180px;
+  max-width:55vw;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 9 */
+
+.block9{
+  width:100%;
+}
+
+.block9-wrap{
+  position:relative;
+  width:100%;
+}
+
+.block9-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* общие стили кнопок */
+.block9-btn{
+  position:absolute;
+  left:50%;
+
+  transform:translateX(-50%);
+}
+
+/* верхняя кнопка */
+.block9 .btn-top{
+  top:25%;
+}
+
+/* нижняя кнопка */
+.block9 .btn-bottom{
+  top:50%;
+}
+
+/* картинки кнопок */
+.block9-btn img{
+  width:180px;
+  max-width:55vw;
+  height:auto;
+  display:block;
+}
+
+/* БЛОК 10 */
+
+.block10{
+  width:100%;
+  /* padding-bottom:60px; */
+  background:#F7F8F8;
+}
+
+.block10-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* форма */
+.rsvp-form{
+  width:90%;
+  margin:40px auto 0;
+}
+
+/* группа */
+.form-group{
+  margin-bottom:35px;
+}
+
+/* поле */
+.form-group input[type="text"]{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #000;
+  padding:12px 0;
+  font-size:16px;
+  background:transparent;
+  outline:none;
+}
+
+/* заголовки */
+.form-title{
+  font-family:'Montserrat' ;
+  font-size:18px;
+  margin-bottom:18px;
+  color:#677B92;
+}
+
+/* радио и чекбоксы */
+.radio-label,
+.checkbox-label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  margin-bottom:12px;
+  font-family:'Montserrat' ;
+  font-size:16px;
+  color:#677B92;
+}
+
+/* плэйсхолдер ФИО */
+
+.form-group input[type="text"]::placeholder{
+  font-family:'Montserrat' ;
+  font-size:16px;
+  color:#677B92;
+}
+
+.radio-label input,
+.checkbox-label input{
+  width:18px;
+  height:18px;
+}
+
+/* кнопка */
+.submit-btn{
+  border:none;
+  background:none;
+  display:block;
+  margin:40px auto 0;
+  padding:0;
+  cursor:pointer;
+}
+
+.submit-btn img{
+  width:190px;
+  max-width:60vw;
+  height:auto;
+  display:block;
+}
+
+/* сообщение */
+#form-message{
+  margin-top:20px;
+  text-align:center;
+  font-size:16px;
+}
+
+/* БЛОК 11 */
+
+.block11{
+  background:#F7F8F8;
+  width:100%;
+}
+
+.block11-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+
+/* ЭКРАН КОНВЕРТА */
+
+.envelope-screen{
+  position:fixed;
+  inset:0;
+
+  background:#F7F8F8;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  z-index:99999;
+
+  opacity:1;
+  visibility:visible;
+
+  transition:
+    opacity 1.8s ease,
+    visibility 1.8s ease;
+}
+
+/* плавное скрытие */
+.envelope-screen.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+/* конверт */
+
+.envelope-img{
+
+  width:340px;
+  max-width:90vw;
+
+  height:auto;
+
+  cursor:pointer;
+
+  animation:float 4s ease-in-out infinite;
+
+  transition:
+    transform 1.8s cubic-bezier(.22,.8,.2,1),
+    opacity 1.8s ease;
+}
+
+/* анимация открытия */
+.envelope-screen.hide .envelope-img{
+
+  transform:
+    scale(1.25)
+    translateY(-30px);
+
+  opacity:0;
+}
+
+/* сайт скрыт */
+
+.site-content{
+
+  opacity:0;
+
+  transform:scale(1.02);
+
+  filter:blur(8px);
+
+  transition:
+    opacity 2s ease,
+    transform 2s ease,
+    filter 2s ease;
+}
+
+/* показать сайт */
+
+.site-content.show{
+
+  opacity:1;
+
+  transform:scale(1);
+
+  filter:blur(0);
+}
+
+/* плавание */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* АНИМАЦИЯ САЙТА */
+
+.fade-in{
+  opacity:0;
+  transform:translateY(40px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ЭКРАН КОНВЕРТА -->
+
+<div class="envelope-screen" id="envelopeScreen">
+
+  <img
+    src="img/27.png"
+    alt=""
+    class="envelope-img"
+    id="openEnvelopeBtn"
+  >
+
+</div>
+
+<div class="site-content" id="siteContent"></div>
+
+  <!-- БЛОК 1 -->
+  <section class="block1 fade-in">
+    <img src="img/1.png" alt="" class="block1-img">
+  </section>
+
+    <!-- БЛОК 2 -->
+  <section class="block2">
+    <img src="img/2.png" alt="" class="block2-img fade-in">
+    <img src="img/3.png" alt="" class="block2-img fade-in">
+  </section>
+
+  <!-- БЛОК 3 -->
+<section class="block3 fade-in">
+
+  <div class="block3-wrap">
+
+    <!-- фото -->
+    <img src="img/4.png" alt="" class="block3-img">
+
+    <!-- кнопка -->
+    <a href="https://yandex.ru/maps/-/CPGe7R~o" target="_blank" class="block3-btn">
+      <img src="img/5.png" alt="">
+    </a>
+
+  </div>
+
+</section>
+
+    <!-- БЛОК 4 -->
+  <section class="block4">
+    <img src="img/6.png" alt="" class="block4-img fade-in">
+    <img src="img/7.png" alt="" class="block4-img fade-in">
+    <img src="img/8.png" alt="" class="block4-img fade-in">
+    <img src="img/9.png" alt="" class="block4-img fade-in">
+  </section>
+
+    <!-- БЛОК 5 -->
+  <section class="block5">
+    <img src="img/10.png" alt="" class="block5-img fade-in">
+    <img src="img/11.png" alt="" class="block5-img fade-in">
+    <img src="img/12.png" alt="" class="block5-img fade-in">
+    
+  </section>
+
+
+  <!-- БЛОК 6 -->
+<section class="block6 fade-in">
+
+  <div class="block6-wrap">
+
+    <!-- большое фото -->
+    <img src="img/13.png" alt="" class="block6-main">
+
+    <!-- маленькое фото 1 -->
+    <img src="img/14.png" alt="" class="fly-photo fly1">
+
+    <!-- маленькое фото 2 -->
+    <img src="img/15.png" alt="" class="fly-photo fly2">
+
+    <!-- маленькое фото 3 -->
+    <img src="img/16.png" alt="" class="fly-photo fly3">
+
+  </div>
+
+</section>
+
+    <!-- БЛОК 7 -->
+  <section class="block7">
+    <img src="img/17.png" alt="" class="block7-img fade-in">
+    <img src="img/18.png" alt="" class="block7-img fade-in">
+    <img src="img/19.png" alt="" class="block7-img fade-in">
+    
+  </section>
+
+  <!-- БЛОК 8 -->
+<section class="block8">
+
+  <div class="block8-wrap">
+
+    <!-- фон -->
+    <img src="img/20.png" alt="" class="block8-img fade-in">
+
+    <!-- кнопка позвонить -->
+    <a href="tel:89218206332" class="block8-btn phone-btn">
+      <img src="img/21.png" alt="">
+    </a>
+
+    <!-- кнопка VK -->
+    <a href="https://vk.ru/shishkinalove" target="_blank" class="block8-btn vk-btn">
+      <img src="img/22.png" alt="">
+    </a>
+
+  </div>
+
+</section>
+
+  <!-- БЛОК 9 -->
+<section class="block9">
+
+  <div class="block9-wrap">
+
+    <!-- фон -->
+    <img src="img/23.png" alt="" class="block9-img fade-in">
+
+    <!-- кнопка 1 -->
+    <a href="tel:+7 (981) 430-15-17" target="_blank" class="block9-btn btn-top">
+      <img src="img/21.png" alt="">
+    </a>
+
+    <!-- кнопка 2 -->
+    <a href="https://vk.ru/id562036822" target="_blank" class="block9-btn btn-bottom">
+      <img src="img/22.png" alt="">
+    </a>
+
+  </div>
+
+</section>
+
+<!-- БЛОК 10 -->
+<section class="block10 fade-in">
+
+  <!-- фото -->
+  <img src="img/24.png" alt="" class="block10-img">
+
+  <!-- форма -->
+  <form
+    id="rsvp-form"
+    class="rsvp-form"
+    action="https://formsubmit.co/plyasheva4856@mail.ru"
+    method="POST"
+  >
+
+    <!-- скрытые настройки -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="Новая анкета со свадьбы">
+
+    <!-- ФИО -->
+    <div class="form-group">
+      <input
+        type="text"
+        name="name"
+        placeholder="Ваше имя и фамилия"
+        required
+      >
+    </div>
+
+    <!-- присутствие -->
+    <div class="form-group">
+
+      <p class="form-title">
+        Подтвердите свое присутствие:
+      </p>
+
+      <label class="radio-label">
+        <input type="radio" name="attendance" value="Да, с удовольствием!" required>
+        Да, с удовольствием!
+      </label>
+
+      <label class="radio-label">
+        <input type="radio" name="attendance" value="К сожалению, не смогу">
+        К сожалению, не смогу
+      </label>
+
+    </div>
+
+    <!-- напитки -->
+    <div class="form-group">
+
+      <p class="form-title">
+        Ваши предпочтения в напитках:
+      </p>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Вино белое">
+        Вино белое
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Вино красное">
+        Вино красное
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Шампанское">
+        Шампанское
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Водка">
+        Водка
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Водка с соком/колой">
+        Водка с соком/колой
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Коньяк">
+        Коньяк
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox" name="drinks[]" value="Безалкогольные напитки">
+        Безалкогольные напитки
+      </label>
+
+    </div>
+
+    <!-- кнопка -->
+    <button type="submit" class="submit-btn">
+      <img src="img/25.png" alt="">
+    </button>
+
+  </form>
+
+  <p id="form-message"></p>
+
+</section>
+
+  <!-- БЛОК 11 -->
+  <section class="block11 fade-in">
+    <img src="img/26.png" alt="" class="block11-img">
+  </section>
+
+  <script src="script.js"></script>
+</div>
+</body>
+</html>
