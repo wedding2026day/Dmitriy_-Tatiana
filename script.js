@@ -12,46 +12,23 @@ flyPhotos.forEach(photo => {
 
 });
 
-// ОТПРАВКА ФОРМЫ В GOOGLE ТАБЛИЦУ
+// ФОРМА
 
 const form = document.getElementById("rsvp-form");
 const formMessage = document.getElementById("form-message");
 
-const GOOGLE_SCRIPT_URL = "https://docs.google.com/spreadsheets/d/1V76f-CNrr17P1bIIe8L0IUNaGHHOGBwj0hHZ6iWmzbk/edit?usp=sharing";
-
 if (form) {
-  let isSending = false;
 
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
+  form.addEventListener("submit", function() {
 
-    if (isSending) return;
-    isSending = true;
+    formMessage.innerText = "Отправка анкеты...";
 
-    const btn = form.querySelector(".submit-btn");
-    btn.style.opacity = "0.6";
-    btn.style.pointerEvents = "none";
+    setTimeout(() => {
+      formMessage.innerText = "Спасибо! Анкета отправлена";
+    }, 1500);
 
-    const data = new FormData(form);
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        body: data,
-        mode: "no-cors"
-      });
-
-      form.reset();
-      formMessage.textContent = "Спасибо! Анкета отправлена";
-
-    } catch (error) {
-      formMessage.textContent = "Ошибка отправки. Попробуйте еще раз";
-    } finally {
-      isSending = false;
-      btn.style.opacity = "1";
-      btn.style.pointerEvents = "auto";
-    }
   });
+
 }
 
 // КОНВЕРТ
