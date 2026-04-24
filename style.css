@@ -506,3 +506,164 @@ body{
   opacity:1;
   transform:translateY(0);
 }
+
+
+
+/* СЕРДЕЧКИ */
+
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:999;
+}
+
+.hearts::before,
+.hearts::after{
+
+  content:"❤";
+
+  position:absolute;
+
+  color:rgba(255,255,255,0.5);
+
+  font-size:18px;
+
+  animation: heartsFloat 12s linear infinite;
+}
+
+.hearts::before{
+  left:20%;
+}
+
+.hearts::after{
+  left:70%;
+  animation-delay:6s;
+}
+
+@keyframes heartsFloat{
+
+  0%{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+
+  10%{
+    opacity:1;
+  }
+
+  100%{
+    transform:translateY(-120vh);
+    opacity:0;
+  }
+
+}
+
+/* ЖИВЫЕ КНОПКИ */
+
+.block3-btn img,
+.submit-btn img{
+
+  animation: pulseBtn 3s ease-in-out infinite;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.block3-btn img:active,
+
+.submit-btn img:active{
+
+  transform:scale(.95);
+}
+
+@keyframes pulseBtn{
+
+  0%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.05);
+  }
+
+  100%{
+    transform:scale(1);
+  }
+
+}
+
+/* ПЛЕНОЧНОЕ ПОКАЧИВАНИЕ */
+
+
+
+
+/* БЛИКИ */
+
+.light-overlay{
+
+  position:fixed;
+  inset:0;
+
+  pointer-events:none;
+
+  z-index:50;
+
+  overflow:hidden;
+}
+
+.light-overlay::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:60vw;
+  height:140vh;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.12),
+      transparent
+    );
+
+  transform:rotate(15deg);
+
+  animation: lightMove 12s linear infinite;
+}
+
+@keyframes lightMove{
+
+  0%{
+    left:-80%;
+  }
+
+  100%{
+    left:140%;
+  }
+
+}
+
+
+
+/* ОТКЛЮЧАЕМ АНИМАЦИИ В 8 И 9, НО НЕ ЛОМАЕМ ЦЕНТР */
+
+.block8 *,
+.block9 *{
+  animation:none !important;
+}
+
+.block8-btn,
+.block9-btn{
+  transform:translateX(-50%) !important;
+}
+
+.block8-btn img,
+.block9-btn img{
+  animation:none !important;
+  transform:none !important;
+}

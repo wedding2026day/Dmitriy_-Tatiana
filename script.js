@@ -19,44 +19,18 @@ const formMessage = document.getElementById("form-message");
 
 if (form) {
 
-  form.addEventListener("submit", async function(e) {
+  form.addEventListener("submit", function() {
 
-    e.preventDefault();
+    formMessage.innerText = "Отправка анкеты...";
 
-    formMessage.innerText = "Отправка...";
-
-    const formData = new FormData(form);
-
-    try {
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-
-        formMessage.innerText = "Спасибо! Анкета отправлена 🤍";
-
-        form.reset();
-
-      } else {
-
-        formMessage.innerText = "Ошибка отправки";
-
-      }
-
-    } catch (error) {
-
-      formMessage.innerText = "Ошибка отправки";
-
-    }
+    setTimeout(() => {
+      formMessage.innerText = "Спасибо! Анкета отправлена";
+    }, 1500);
 
   });
 
 }
+
 // КОНВЕРТ
 
 const envelopeScreen = document.getElementById("envelopeScreen");
@@ -96,3 +70,19 @@ const fadeObserver = new IntersectionObserver((entries) => {
 fadeItems.forEach((item) => {
   fadeObserver.observe(item);
 });
+
+// МУЗЫКА
+
+const music = document.getElementById("bgMusic");
+const openBtn = document.getElementById("openEnvelopeBtn");
+
+if (openBtn) {
+
+  openBtn.addEventListener("click", () => {
+
+    music.play().catch(() => {});
+
+  });
+
+}
+
